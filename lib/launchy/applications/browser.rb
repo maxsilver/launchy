@@ -64,7 +64,7 @@ class Launchy::Application
     end
 
     def cmd_and_args( uri, options = {} )
-      cmd = browser_cmdline
+      cmd = browser_cmdline.to_s
       args = [ uri.to_s ]
       if cmd =~ /%s/ then
         cmd.gsub!( /%s/, args.shift )
